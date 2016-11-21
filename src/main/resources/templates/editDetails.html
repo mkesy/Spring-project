@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Material details edition</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Here you can edit material details</h1>
+<form th:action="@{/details}" method="post" enctype="multipart/form-data">
+    <div>
+        Name: <input name="name" th:attr="value= ${details[0].name}"/>
+    </div>
+    <div>
+        Description: <input name="description" th:attr="value= ${details[0].description}"/>
+    </div>
+    <div>
+        Notes: <input name="notes" th:attr="value= ${details[0].notes}"/>
+    </div>
+    <div>
+        Supplier: <input name="supplier" th:attr="value= ${details[0].supplier}"/>
+    </div>
+    <div>
+        Price: <input name="price" th:attr="value= ${details[0].price}"/>
+    </div>
+    <div>
+        Currency: <input name="currency" th:attr="value= ${details[0].currency}"/>
+    </div>
+    <div>
+        <input type="hidden" name="id" th:attr="value= ${details[0].id}"/>
+    </div>
+    <div>
+        <input type="submit" value="Confirm the change" name="button"/>
+    </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Materials</title>
+</head>
+<body>
+<h1 th:inline="text">This is a materials list for a company with id: <span th:text="${material[0].companyID}"/></h1>
+<table cellspacing="20">
+    <tr>
+        <th>Material name</th>
+        <th>Material ID</th>
+        <th>Company ID</th>
+        <th></th>
+    </tr>
+    <tr th:each="material : ${material}">
+        <td th:text="${material.name}"></td>
+        <td th:text="${material.id}"></td>
+        <td th:text="${material.companyID}"></td>
+        <td>
+            <a th:href="@{/materialDetails/{id}(id=${material.id})}">view material details</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

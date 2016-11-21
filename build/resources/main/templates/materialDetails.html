@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Material details view</title>
+</head>
+<body>
+<h1 th:inline="text">This is a specification for material with id: <span th:text="${materialDetails[0].id}"/> </h1>
+<p><b>Name:</b> <span th:text="${materialDetails[0].name}"/></p>
+<p><b>Description:</b> <span th:text="${materialDetails[0].description}"/></p>
+<p><b>Notes:</b> <span th:text="${materialDetails[0].notes}"/></p>
+<p><b>Supplier:</b> <span th:text="${materialDetails[0].supplier}"/></p>
+<p><b>Price:</b> <span th:text="${materialDetails[0].price}"/></p>
+<p><b>Currency:</b> <span th:text="${materialDetails[0].currency}"/></p>
+<div>
+    <a th:href="@{/details/{id}(id=${materialDetails[0].id})}">edit material details</a>
+</div>
+</body>
+</html>
