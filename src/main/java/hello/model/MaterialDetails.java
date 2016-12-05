@@ -1,8 +1,9 @@
-package hello;
+package hello.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 /**
  * Created by Mikolaj on 13.11.2016.
@@ -11,21 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MaterialDetails {
 
-    @JsonProperty("name")
     private String name;
-    @JsonProperty("description")
     private String description;
-    @JsonProperty("notes")
     private String notes;
-    @JsonProperty("supplier")
     private String supplier;
-    @JsonProperty("price")
     private double price;
-    @JsonProperty("currency")
     private String currency;
     @JsonProperty("ID")
     private int id;
-
 
     public MaterialDetails() {
 

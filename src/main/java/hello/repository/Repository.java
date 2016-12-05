@@ -1,4 +1,9 @@
-package hello;
+package hello.repository;
+
+import hello.model.Company;
+import hello.model.Material;
+import hello.model.MaterialDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +11,8 @@ import java.util.List;
 /**
  * Created by Mikolaj on 13.11.2016.
  */
+
+@Component
 public class Repository {
 
     private static Repository instance = null;
@@ -37,7 +44,7 @@ public class Repository {
         return materialDetails;
     }
 
-    public static boolean containsCID(List<Company> list, int id) {
+    public boolean containsCompanyByID(List<Company> list, int id) {
         for (Company company : list) {
             if (company.getCompanyID() == id) {
                 return true;
@@ -46,7 +53,7 @@ public class Repository {
         return false;
     }
 
-    public static boolean containsMID(List<Material> list, int id) {
+    public boolean containsMaterialByID(List<Material> list, int id) {
         for (Material material : list) {
             if (material.getId() == id) {
                 return true;
@@ -55,7 +62,7 @@ public class Repository {
         return false;
     }
 
-    public static boolean containsMDID(List<MaterialDetails> list, int id) {
+    public boolean containsMaterialDetailByID(List<MaterialDetails> list, int id) {
         for (MaterialDetails materialDetails : list) {
             if (materialDetails.getId() == id) {
                 return true;
@@ -64,7 +71,7 @@ public class Repository {
         return false;
     }
 
-    public static List<Material> findMID(List<Material> list, long id) {
+    public List<Material> filterMaterialsByID(List<Material> list, long id) {
         List<Material> foundedMaterial = new ArrayList<>();
         for (Material material : list) {
             if (material.getCompanyID() == id)
@@ -73,7 +80,7 @@ public class Repository {
         return foundedMaterial;
     }
 
-    public static List<MaterialDetails> findMDID(List<MaterialDetails> list, long id) {
+    public List<MaterialDetails> filterMaterialDetailsByID(List<MaterialDetails> list, long id) {
         List<MaterialDetails> foundedMaterialDetails = new ArrayList<>();
         for (MaterialDetails materialDetails : list) {
             if (materialDetails.getId() == id)
@@ -82,7 +89,7 @@ public class Repository {
         return foundedMaterialDetails;
     }
 
-    public static MaterialDetails getMDbyID(List<MaterialDetails> list, long id) {
+    public MaterialDetails getMaterialDetailByID(List<MaterialDetails> list, long id) {
         MaterialDetails foundedMaterialDetails = null;
         for (MaterialDetails materialDetails : list) {
             if (materialDetails.getId() == id)
