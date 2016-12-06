@@ -36,7 +36,6 @@ public class CompanyController {
         return "companies";
     }
 
-
     @RequestMapping("/material/{id}")
     public String returnMaterialsById(@PathVariable Long id, Model model) {
         final RestTemplate restTemplate = new RestTemplate();
