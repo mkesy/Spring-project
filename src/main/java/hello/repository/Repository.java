@@ -15,22 +15,9 @@ import java.util.List;
 @Component
 public class Repository {
 
-    private static Repository instance = null;
     private final List<Company> companies = new ArrayList<>();
     private final List<Material> materials = new ArrayList<>();
     private final List<MaterialDetails> materialDetails = new ArrayList<>();
-
-    protected Repository() {
-
-    }
-
-    public static Repository getInstance() {
-        if (instance == null) {
-            instance = new Repository();
-        }
-        return instance;
-    }
-
 
     public List<Company> getCompanies() {
         return companies;
